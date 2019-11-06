@@ -9,21 +9,13 @@ public class Main {
         Scanner key = new Scanner(System.in);
         System.out.println("Enter an integer n: ");
         int input = key.nextInt();
-        int[] arr = makeArray(input);
-        System.out.println(Arrays.toString(arr));
-    }
-
-    public static int[] makeArray(int x) {
-        int[] retArray = new int[x];
-        int num = 1;
-        for(int i = 0; i < retArray.length; i++) {
-            retArray[i] = num;
-            num ++;
+        Permutation permute = new Permutation(input);
+        String output = "";
+        while(permute.hasMorePermutations()){
+            int[] temp = permute.makePermutation();
+            output += ", " + Arrays.toString(temp);
         }
-        return retArray;
-    }
-
-    public static void permute(int[] array) {
-        
+        System.out.println("Permutations of the array 1 to n are: ");
+        System.out.println(output);
     }
 }
