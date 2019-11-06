@@ -13,7 +13,7 @@ public class Main {
         String output = "";
         while(permute.hasMorePermutations()){
             int[] temp = permute.makePermutation();
-            output += ", " + Arrays.toString(temp);
+            output += Arrays.toString(temp) + ", ";
         }
         System.out.println("Permutations of the array 1 to n are: ");
         System.out.println(output);
